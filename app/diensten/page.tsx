@@ -1,0 +1,18 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { Arrow, CtaBand, PageHero, SiteFooter, SiteHeader } from "../components/SiteChrome";
+
+export const metadata: Metadata = { title: "Diensten | ATW Montage", description: "Complete woningrenovatie, aanbouw met PVC-panelen en glazen schuifpuien, en maatvast timmerwerk door ATW Montage." };
+
+const services = [
+  { id: "complete-woningrenovatie", number: "01", label: "Onze specialisatie", title: "Complete woningrenovatie", intro: "Eén ervaren partij die uw renovatie van begin tot eind coördineert.", text: "We brengen de bestaande situatie in kaart, stemmen alle werkzaamheden op elkaar af en bewaken de kwaliteit tijdens iedere fase. Van sloop en constructieve aanpassingen tot afbouw en de laatste timmerdetails.", items: ["Sloop- en voorbereidende werkzaamheden", "Constructie en indelingswijzigingen", "Afbouw, montage en timmerdetails", "Coördinatie van planning en vakmensen"] },
+  { id: "aanbouw-uitbouw", number: "02", label: "PVC & glas", title: "Aanbouw in PVC & glas", intro: "Een lichte, moderne uitbreiding met onderhoudsarme PVC-panelen en glazen schuifpuien.", text: "ATW Montage realiseert aanbouwen met een strakke bekleding van PVC-panelen en brede glazen schuifwanden of schuifpuien. Zo ontstaat extra leefruimte met veel daglicht, een open verbinding met de tuin en een verzorgde aansluiting op de bestaande woning.", items: ["Opbouw en bekleding met PVC-panelen", "Glazen schuifpuien en schuifwanden", "Strakke aansluiting op gevel en dak", "Montage en verzorgde afwerking"], image: "/atw-aanbouw-pvc-glass.webp" },
+  { id: "timmer-montagewerk", number: "03", label: "Precies passend", title: "Timmer- & montagewerk", intro: "Degelijk maatwerk voor constructie, afbouw en interieur.", text: "Van functioneel timmerwerk tot zichtwerk dat karakter toevoegt. We werken nauwkeurig, denken mee over praktische oplossingen en leveren netjes op.", items: ["Houten binnen- en buitenconstructies", "Kozijnen, deuren en aftimmering", "Wanden, plafonds en betimmering", "Maatwerkdetails bij renovaties"] },
+];
+
+export default function DienstenPage() {
+  return <main><SiteHeader /><PageHero eyebrow="Diensten" title="Alles onder" accent="één dak." copy="Van complete renovatie tot precies timmerwerk. ATW Montage zorgt voor overzicht, uitvoering en een resultaat dat klopt." image="finish" />
+    <section className="service-detail-list">{services.map((service) => <article id={service.id} key={service.number} className={`service-detail${service.image ? " service-detail-featured" : ""}`} data-reveal><div className="detail-index"><span>{service.number}</span><small>{service.label}</small></div><div className="detail-main"><h2>{service.title}</h2><p className="detail-lead">{service.intro}</p><p>{service.text}</p></div><ul>{service.items.map((item) => <li key={item}>✓ {item}</li>)}</ul>{service.image && <figure className="service-detail-media"><img src={service.image} alt="Moderne aanbouw met donkere PVC-panelen en brede glazen schuifpuien" /><figcaption><span>PVC-panelen</span><span>Glazen schuifpuien</span><span>Veel daglicht</span></figcaption></figure>}</article>)}</section>
+    <section className="scope-section" data-reveal><div><p className="kicker">Van opname tot oplevering</p><h2>Niet alleen uitvoeren.<br />Ook vooruitdenken.</h2></div><div className="scope-copy"><p>Bij een complete verbouwing grijpen veel werkzaamheden in elkaar. Daarom kijken we verder dan onze eigen werkstap. We signaleren knelpunten vroeg, houden de planning overzichtelijk en zorgen dat beslissingen op tijd worden genomen.</p><Link className="text-link dark" href="/werkwijze">Zo werken wij <Arrow /></Link></div></section>
+    <CtaBand /><SiteFooter /></main>;
+}
