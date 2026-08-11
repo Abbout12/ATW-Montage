@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { ArrowUpRightIcon, CheckIcon, CloseIcon } from "./Icons";
 
 type Project = {
   number: string;
@@ -47,7 +48,7 @@ export function PortfolioGrid() {
           <button className="portfolio-card" type="button" key={project.number} onClick={() => setSelected(project)} aria-label={`Bekijk ${project.title}`}>
             <img src={project.image} alt={project.alt} loading="lazy" />
             <span className="portfolio-card-shade" aria-hidden="true" />
-            <span className="portfolio-card-meta"><small>{project.number} · {project.category}</small><strong>{project.title}</strong><i>Bekijk details ↗</i></span>
+            <span className="portfolio-card-meta"><small>{project.number} · {project.category}</small><strong>{project.title}</strong><i>Bekijk details <ArrowUpRightIcon /></i></span>
           </button>
         ))}
       </div>
@@ -55,13 +56,13 @@ export function PortfolioGrid() {
       {selected && (
         <div className="portfolio-modal-backdrop" role="presentation" onClick={() => setSelected(null)}>
           <article className="portfolio-modal" role="dialog" aria-modal="true" aria-labelledby="portfolio-modal-title" onClick={(event) => event.stopPropagation()}>
-            <button className="portfolio-modal-close" type="button" onClick={() => setSelected(null)} aria-label="Project sluiten">×</button>
+            <button className="portfolio-modal-close" type="button" onClick={() => setSelected(null)} aria-label="Project sluiten"><CloseIcon /></button>
             <img src={selected.image} alt={selected.alt} />
             <div className="portfolio-modal-copy">
               <p className="kicker">{selected.number} · {selected.category}</p>
               <h2 id="portfolio-modal-title">{selected.title}</h2>
               <p>{selected.summary}</p>
-              <ul>{selected.scope.map((item) => <li key={item}>✓ {item}</li>)}</ul>
+              <ul>{selected.scope.map((item) => <li key={item}><CheckIcon /> {item}</li>)}</ul>
               <small>Representatieve renovatie-impressie. Verifieerbare referenties zijn op aanvraag beschikbaar.</small>
             </div>
           </article>

@@ -18,8 +18,15 @@ export const metadata: Metadata = {
   description:
     "ATW Montage verzorgt complete woningrenovaties door heel Nederland. VCA-gecertificeerd vakwerk, duidelijke afspraken en één vast aanspreekpunt.",
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
+    icon: [
+      { url: "/favicon.ico?v=2", sizes: "any" },
+      { url: "/favicon-32x32.png?v=2", type: "image/png", sizes: "32x32" },
+      { url: "/favicon.svg?v=2", type: "image/svg+xml" },
+    ],
+    shortcut: "/favicon.ico?v=2",
+    apple: [
+      { url: "/apple-touch-icon.png?v=2", type: "image/png", sizes: "180x180" },
+    ],
   },
 };
 

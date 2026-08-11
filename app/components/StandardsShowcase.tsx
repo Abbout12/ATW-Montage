@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { ArrowUpRightIcon } from "./Icons";
 
 const standards = [
   {
@@ -75,7 +76,7 @@ export function StandardsShowcase() {
                 <span className="standard-card-result">{standard.result}</span>
                 <strong className="standard-card-title">{standard.title}</strong>
                 <span className="standard-card-description">{standard.description}</span>
-                <span className="standard-card-action">Bekijk deze fase <i aria-hidden="true">↗</i></span>
+                <span className="standard-card-action">Bekijk deze fase <i aria-hidden="true"><ArrowUpRightIcon /></i></span>
               </span>
             </button>
           );

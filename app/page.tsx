@@ -3,6 +3,7 @@ import { ContactForm } from "./components/ContactForm";
 import { ProcessJourney } from "./components/ProcessJourney";
 import { ServiceExplorer } from "./components/ServiceExplorer";
 import { Arrow, email, phoneDisplay, phoneLink, SiteFooter, SiteHeader } from "./components/SiteChrome";
+import { ArrowDownIcon, CheckIcon } from "./components/Icons";
 
 export default function Home() {
   return (
@@ -19,7 +20,7 @@ export default function Home() {
             <a className="button button-ghost" href="https://wa.me/31616861106" target="_blank" rel="noreferrer">Direct via WhatsApp</a>
           </div>
         </div>
-        <a className="scroll-hint" href="#diensten" aria-label="Scroll naar diensten"><span>Ontdek ons werk</span><i aria-hidden="true">↓</i></a>
+        <a className="scroll-hint" href="#diensten" aria-label="Scroll naar diensten"><span>Ontdek ons werk</span><i aria-hidden="true"><ArrowDownIcon /></i></a>
       </section>
 
       <section className="proof-strip" aria-label="Waarom ATW Montage" data-reveal>
@@ -42,16 +43,16 @@ export default function Home() {
           <div><p>Een indruk van complete renovatie, aanbouw en maatwerk. Ieder beeld laat zien waar wij op letten: constructie, maatvoering en een verzorgde afwerking.</p><Link className="section-link" href="/projecten">Bekijk het volledige portfolio <Arrow /></Link></div>
         </div>
         <div className="portfolio-home-grid">
-          <Link className="portfolio-home-card is-large" href="/projecten"><img src="/atw-hero-v2.webp" alt="Complete woningrenovatie met houten constructie" /><span><small>01 · Complete renovatie</small><strong>Van casco naar karakter</strong><i>Bekijk project ↗</i></span></Link>
-          <Link className="portfolio-home-card" href="/projecten"><img src="/atw-portfolio-cabinetry.webp" alt="Eiken maatwerk wandkast" /><span><small>02 · Timmerwerk</small><strong>Maatwerk dat past</strong><i>Bekijk project ↗</i></span></Link>
-          <Link className="portfolio-home-card" href="/diensten#aanbouw-uitbouw"><img src="/atw-aanbouw-pvc-glass.webp" alt="Aanbouw met PVC-panelen en glazen schuifpuien" /><span><small>03 · Aanbouw in PVC & glas</small><strong>Licht, ruimte en een strakke aansluiting</strong><i>Bekijk dienst ↗</i></span></Link>
+          <Link className="portfolio-home-card is-large" href="/projecten"><img src="/atw-hero-v2.webp" alt="Complete woningrenovatie met houten constructie" /><span><small>01 · Complete renovatie</small><strong>Van casco naar karakter</strong><i>Bekijk project <Arrow /></i></span></Link>
+          <Link className="portfolio-home-card" href="/projecten"><img src="/atw-portfolio-cabinetry.webp" alt="Eiken maatwerk wandkast" /><span><small>02 · Timmerwerk</small><strong>Maatwerk dat past</strong><i>Bekijk project <Arrow /></i></span></Link>
+          <Link className="portfolio-home-card" href="/diensten#aanbouw-uitbouw"><img src="/atw-aanbouw-pvc-glass.webp" alt="Aanbouw met PVC-panelen en glazen schuifpuien" /><span><small>03 · Aanbouw in PVC & glas</small><strong>Licht, ruimte en een strakke aansluiting</strong><i>Bekijk dienst <Arrow /></i></span></Link>
         </div>
         <p className="portfolio-disclaimer">Representatieve renovatie-impressies. Verifieerbare referenties delen we graag tijdens een kennismaking.</p>
       </section>
 
       <section className="craft-section" id="over-ons" data-reveal>
         <div className="craft-visual" role="img" aria-label="Ambachtelijk timmerwerk tijdens een woningrenovatie"><div className="craft-grid" aria-hidden="true" /><div className="craft-stamp" aria-hidden="true"><span>ATW</span><small>Vakwerk<br />sinds dag één</small></div></div>
-        <div className="craft-copy"><p className="kicker light">Gebouwd op vertrouwen</p><h2>Geen losse beloftes.<br /><em>Gewoon goed werk.</em></h2><p>Een verbouwing vraagt om vertrouwen. Daarom werken we met korte lijnen, heldere afspraken en vakmensen die weten wat ze doen.</p><ul className="check-list"><li><span>✓</span> VCA-gecertificeerde vakmensen</li><li><span>✓</span> Duidelijke planning en transparante communicatie</li><li><span>✓</span> Eén aanspreekpunt van opname tot oplevering</li></ul><Link className="text-link" href="/over-ons">Kennismaken met ATW Montage <Arrow /></Link></div>
+        <div className="craft-copy"><p className="kicker light">Gebouwd op vertrouwen</p><h2>Geen losse beloftes.<br /><em>Gewoon goed werk.</em></h2><p>Een verbouwing vraagt om vertrouwen. Daarom werken we met korte lijnen, heldere afspraken en vakmensen die weten wat ze doen.</p><ul className="check-list"><li><span><CheckIcon /></span> VCA-gecertificeerde vakmensen</li><li><span><CheckIcon /></span> Duidelijke planning en transparante communicatie</li><li><span><CheckIcon /></span> Eén aanspreekpunt van opname tot oplevering</li></ul><Link className="text-link" href="/over-ons">Kennismaken met ATW Montage <Arrow /></Link></div>
       </section>
 
       <section className="result-section" data-reveal>

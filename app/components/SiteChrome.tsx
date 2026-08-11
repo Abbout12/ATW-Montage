@@ -1,11 +1,12 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { ArrowUpRightIcon } from "./Icons";
 
 export const phoneDisplay = "06 16 86 11 06";
 export const phoneLink = "+31616861106";
 export const email = "ATWmontage@info.nl";
 
-export const Arrow = () => <span aria-hidden="true">↗</span>;
+export const Arrow = ArrowUpRightIcon;
 
 const navItems = [
   { href: "/diensten", label: "Diensten" },

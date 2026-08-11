@@ -90,7 +90,7 @@ export function ServiceExplorer() {
           >
             <span>{item.number}</span>
             <strong>{item.shortTitle}</strong>
-            <i aria-hidden="true">↗</i>
+            <i aria-hidden="true"><Arrow /></i>
           </button>
         ))}
       </div>

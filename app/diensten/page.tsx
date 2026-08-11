@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Arrow, CtaBand, PageHero, SiteFooter, SiteHeader } from "../components/SiteChrome";
+import { CheckIcon } from "../components/Icons";
 
 export const metadata: Metadata = { title: "Diensten | ATW Montage", description: "Complete woningrenovatie, aanbouw met PVC-panelen en glazen schuifpuien, en maatvast timmerwerk door ATW Montage." };
 
@@ -12,7 +13,7 @@ const services = [
 
 export default function DienstenPage() {
   return <main><SiteHeader /><PageHero eyebrow="Diensten" title="Alles onder" accent="één dak." copy="Van complete renovatie tot precies timmerwerk. ATW Montage zorgt voor overzicht, uitvoering en een resultaat dat klopt." image="finish" />
-    <section className="service-detail-list">{services.map((service) => <article id={service.id} key={service.number} className={`service-detail${service.image ? " service-detail-featured" : ""}`} data-reveal><div className="detail-index"><span>{service.number}</span><small>{service.label}</small></div><div className="detail-main"><h2>{service.title}</h2><p className="detail-lead">{service.intro}</p><p>{service.text}</p></div><ul>{service.items.map((item) => <li key={item}>✓ {item}</li>)}</ul>{service.image && <figure className="service-detail-media"><img src={service.image} alt="Moderne aanbouw met donkere PVC-panelen en brede glazen schuifpuien" /><figcaption><span>PVC-panelen</span><span>Glazen schuifpuien</span><span>Veel daglicht</span></figcaption></figure>}</article>)}</section>
+    <section className="service-detail-list">{services.map((service) => <article id={service.id} key={service.number} className={`service-detail${service.image ? " service-detail-featured" : ""}`} data-reveal><div className="detail-index"><span>{service.number}</span><small>{service.label}</small></div><div className="detail-main"><h2>{service.title}</h2><p className="detail-lead">{service.intro}</p><p>{service.text}</p></div><ul>{service.items.map((item) => <li key={item}><CheckIcon /> {item}</li>)}</ul>{service.image && <figure className="service-detail-media"><img src={service.image} alt="Moderne aanbouw met donkere PVC-panelen en brede glazen schuifpuien" /><figcaption><span>PVC-panelen</span><span>Glazen schuifpuien</span><span>Veel daglicht</span></figcaption></figure>}</article>)}</section>
     <section className="scope-section" data-reveal><div><p className="kicker">Van opname tot oplevering</p><h2>Niet alleen uitvoeren.<br />Ook vooruitdenken.</h2></div><div className="scope-copy"><p>Bij een complete verbouwing grijpen veel werkzaamheden in elkaar. Daarom kijken we verder dan onze eigen werkstap. We signaleren knelpunten vroeg, houden de planning overzichtelijk en zorgen dat beslissingen op tijd worden genomen.</p><Link className="text-link dark" href="/werkwijze">Zo werken wij <Arrow /></Link></div></section>
     <CtaBand /><SiteFooter /></main>;
 }
